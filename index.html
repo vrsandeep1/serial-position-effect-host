@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>Serial Position Effect</title>
+	<style>
+		.card {
+			border-radius: 45px;
+			box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+			transition: 0.3s;
+		}
+
+		.card:hover {
+			box-shadow: 0 16px 32	px 0 rgba(0,0,0,0.2);
+		}
+
+		.container {
+			padding: 2px 16px;
+		}
+
+		p,h1{
+			color: black;
+		}
+	</style>
+</head>
+<div class="card" style="background-color:#87ceeb;"><br>
+	<body style="margin:100px;">
+		<center><h1>Instructions for Serial Position Experiment with Animal names</h1></center>
+		<p style="font-size:150%;margin:50px">
+			1. A list of animal names will be displayed in the next page.<br><br>
+			2. Try to remember these words visually and mentally.<br><br>
+			3. You will have 8 seconds to look at the animal names list and and remember them, after which the screen will automatically move to the next page.<br><br>
+			4. A timer as shown on the right will display how much time has passed.<br><br>
+			5. When you are ready, click on the START EXPERIMENT button to start the experiment.<br><br>
+			6. Once you click on START EXPERIMENT button,you will not be able to return to this page till the experiment is over.<br><br>
+			<input type="submit" name="nxt" id="nxt" value="START EXPERIMENT" style=" border-radius: 45px; width: 250px; height: 50px; font-size: 20px; background-color: #90EE90" />
+			<script type="text/javascript">
+				document.getElementById('nxt').onclick= function(){ location.href="timer.html";};
+			</script><br><br><br>
+		</p>
+	</body>
+</div>
+</html>

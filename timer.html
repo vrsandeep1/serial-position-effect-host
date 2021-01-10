@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title>Serial Position Effect</title>
+	<style>
+		.card {
+			border-radius: 45px;
+			box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+			transition: 0.3s;
+		}
+
+		.card:hover {
+			box-shadow: 0 16px 32	px 0 rgba(0,0,0,0.2);
+		}
+
+		.container {
+			padding: 2px 16px;
+		}
+
+		
+	</style>
+</head>
+<div class="card" style="background-color:#87ceeb;"><br>
+	<body style="margin: 100px; "><center>
+		<script type="text/javascript">
+			var timeleft = 8;
+			var downloadTimer = setInterval(function(){
+				timeleft--;
+				document.getElementById("countdowntimer").textContent = timeleft;
+
+				if(timeleft <= 0)
+					window.location='result.html';
+			},1000);
+
+		</script>
+		<div id="background"><br>
+			<p style="font-size: 150%"><b><i> You will be redirected in <span id="countdowntimer">8 </span> Seconds</b></i></p>
+			<div id="mydiv1" style="font-size: 130%; font-weight: bold; color: blue; " >
+				DOG
+			</div><br><br>
+			<div id="mydiv2" style="font-size: 130%; font-weight: bold; color: white; ">
+				CAT
+			</div><br><br>
+			<div id="mydiv3" style="font-size: 130%; font-weight: bold; color: yellow; ">
+				WOLF
+			</div><br><br>
+			<div id="mydiv4" style="font-size: 130%; font-weight: bold; color: red; ">
+				BEAR
+			</div><br><br>
+			<div id="mydiv5" style="font-size: 130%; font-weight: bold; color: brown; ">
+				LION
+			</div><br><br>
+			<div id="mydiv6" style="font-size: 130%; font-weight: bold; color: green; ">
+				TIGER
+			</div><br><br>
+			<div id="mydiv7" style="font-size: 130%; font-weight: bold; color: purple; ">
+				PANDA
+			</div><br><br>
+			<div id="mydiv8" style="font-size: 130%; font-weight: bold; color: black; ">
+				GOAT
+			</div>
+		</div><br><br><br> 
+	</center>
+</body></div>
+</html>

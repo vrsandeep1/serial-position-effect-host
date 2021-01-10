@@ -1,0 +1,377 @@
+<html>
+<head>
+</head>
+	<title>Serial Position Effect</title>
+
+<style type="text/css">
+	#pos1{							
+		width: 168px;
+		margin: 100px;
+		float: right;
+		position: relative;
+		left: -250px;
+	}
+	#pos2{							
+		width: 168px;
+		margin: 0px;
+		float: right;
+		position: relative;
+		right: -300px;
+		bottom: -100px;
+	}
+	#mydiv1 {						
+		width:130px;
+		height:25px;
+		text-align: center;
+		margin-bottom: 30px;
+		font-size: 130%; font-weight: bold; color: blue;
+	}
+	#mydiv2 {						
+		width:130px;
+		height:25px;
+		text-align: center;
+		margin-bottom: 30px;
+		font-size: 130%; font-weight: bold; color: #7CB342;
+	}
+	#mydiv3 {						
+		width:130px;
+		height:25px;
+		text-align: center;
+		margin-bottom: 30px;
+		font-size: 130%; font-weight: bold; color: white;
+	}
+	#mydiv4 {						
+		width:130px;
+		height:25px;
+		text-align: center;
+		margin-bottom: 30px;
+		font-size: 130%; font-weight: bold; color: #909497;
+	}
+	#mydiv5 {						
+		width:130px;
+		height:25px;
+		text-align: center;
+		margin-bottom: 30px;
+		font-size: 130%; font-weight: bold; color: yellow;
+	}
+	#mydiv6 {						
+		width:130px;
+		height:25px;
+		text-align: center;
+		margin-bottom: 30px;
+		font-size: 130%; font-weight: bold; color: red;
+	}
+	#mydiv7 {						
+		width:130px;
+		height:25px;
+		text-align: center;
+		margin-bottom: 30px;
+		font-size: 130%; font-weight: bold; color: brown;
+	}
+	#mydiv8 {						
+		width:130px;
+		height:25px;
+		text-align: center;
+		margin-bottom: 30px;
+		font-size: 130%; font-weight: bold; color: green;
+	}
+	#mydiv9 {						
+		width:130px;
+		height:25px;
+		text-align: center;
+		margin-bottom: 30px;
+		font-size: 130%; font-weight: bold; color: #039BE5;
+	}
+	#mydiv10 {						
+		width:130px;
+		height:25px;
+		text-align: center;
+		margin-bottom: 30px;
+		font-size: 130%; font-weight: bold; color: purple;
+	}
+	#mydiv11 {						
+		width:130px;
+		height:25px;
+		text-align: center;
+		margin-bottom: 30px;
+		font-size: 130%; font-weight: bold; color: #EC407A;
+	}
+	#mydiv12 {						
+		width:130px;
+		height:25px;
+		text-align: center;
+		margin-bottom: 30px;
+		font-size: 130%; font-weight: bold; color: black;
+	}
+	#para{								
+		position: relative;
+		top: -500px;
+	}
+	#para1{								
+		position: relative;
+		top: -500px;
+	}
+	#para2{								
+		position: relative;
+		top: -500px;
+	}
+	#para3{								
+		position: relative;
+		top: -700px;
+	}
+	#para4{								
+		position: relative;
+		top: -800px;
+	}
+	.old{											
+		border:2px transparent;
+		}												
+		.new{
+			border: 2px solid black;
+		}
+		.hide{visibility: hidden;}
+		.show{visibility: initial;}
+
+		.card {
+			background-color:#87ceeb;
+			border-radius: 45px;
+			box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+			transition: 0.3s;
+		}
+
+		.card:hover {
+			box-shadow: 0 16px 32	px 0 rgba(0,0,0,0.2);
+		}
+
+		.container {
+			padding: 2px 16px;
+		}
+
+	</style>
+
+	<body  style="background-color:#87ceeb;margin:100px; background-size: 80px; ">
+
+		<script type="text/javascript">
+
+
+			var myarray= [false,false,false,false,false,false,false,false,false,false,false,false];
+		var ans = [true,false,true,false,true,true,true,true,false,true,false,true]; 
+		var dataArray=new array[8];
+		
+		function myfunction1(i)								
+		{	
+			if(myarray[i]){		
+				myarray[i]=false;
+				document.getElementById('mydiv'+(i+1)).setAttribute("class", "old");
+			} else{
+				myarray[i]=true;
+				document.getElementById('mydiv'+(i+1)).setAttribute("class", "new");
+			}
+		}
+
+		function myfunction2()						
+		{
+
+			var count = 0;
+			for(var i=0; i<12; i++){
+				myarray[i] == true? ++count: count;
+			}
+			if(count>8){
+				alert('You should select 8 colors');
+			} else {
+
+				for(var i=0;i<12;i++){ 
+					if(!ans[i]){
+						document.getElementById('mydiv'+(i+1)).outerHTML="";}	
+						else{
+							document.getElementById('mydiv'+(i+1)).removeAttribute("onclick");																									
+							if (document.getElementById('mydiv'+(i+1)).parentNode==document.getElementById('pos2')) {document.getElementById('pos1').appendChild(document.getElementById('mydiv'+(i+1)));}	
+							changetext();
+							showbtn();
+							showsets();
+						}
+					}
+
+				}
+
+
+			}function changetext()
+			{
+				
+
+				
+				document.getElementById("test").value = document.getElementById("para").innerHTML; 
+				document.getElementById('test').setAttribute("class","hide");			
+				
+
+			}
+			function showbtn()
+			{
+				document.getElementById('button2').setAttribute("class","show");  
+				document.getElementById('para').setAttribute("class","show")	
+			}
+			function showsets()
+			{
+				if(myarray[0]==true && myarray[2]==true && myarray[4]==true && myarray[5]==true && myarray[6]==true && myarray[7]==true && myarray[9]==true && myarray[11] == true)
+				{
+					document.getElementById('para2').setAttribute("class","show");
+				}
+				else if(myarray[0]==true && myarray[2]==true && myarray[4]==true){ 
+
+
+					document.getElementById('para1').setAttribute("class","show");
+
+				}
+				else if(myarray[0]==false && myarray[2]==false && myarray[4]==false && myarray[5]==false && myarray[6]==false && myarray[7]==false && myarray[9]==false && myarray[11] == false){																
+					document.getElementById('para3').setAttribute("class","show");
+
+				}
+				else if(myarray[0]==true && myarray[2]==true && myarray[4]==true && myarray[5]==true && myarray[6]==true)
+				{
+					document.getElementById('para1').setAttribute("class","show");
+				}
+				else if(myarray[0]==true)
+				{
+					document.getElementById('para1').setAttribute("class","show");
+				}
+				else if(myarray[2]==true)
+				{
+					document.getElementById('para4').setAttribute("class","show");
+				}
+				else if(myarray[4]==true)
+				{
+					document.getElementById('para4').setAttribute("class","show");
+				}
+				else if(myarray[5]==true)
+				{
+					document.getElementById('para4').setAttribute("class","show");
+				}
+				else if(myarray[6]==true)
+				{
+					document.getElementById('para4').setAttribute("class","show");
+				}
+				else if(myarray[7]==true)
+				{
+					document.getElementById('para1').setAttribute("class","show");
+				}
+				else if(myarray[9]==true)
+				{
+					document.getElementById('para1').setAttribute("class","show");
+				}
+				else if(myarray[11] == true)
+				{
+					document.getElementById('para1').setAttribute("class","show");
+				}
+				else if(myarray[0]==true && myarray[2]==true)
+				{
+					document.getElementById('para1').setAttribute("class","show");
+				}
+				else if(myarray[2]==true && myarray[4]==true)
+				{
+					document.getElementById('para4').setAttribute("class","show");
+				}
+			}
+
+
+			function sendReport()
+			{
+
+				
+				var indarr = [0,2,4,5,6,7,9,11];
+				var animals = ["DOG","CAT","WOLF","BEAR","LION","TIGER","PANDA","GOAT"];
+
+				var finalstr = "Final results are as follows \n";
+
+				for(var i=0;i<8;i++)
+				{
+					if(myarray[indarr[i]] == true)
+					{
+						finalstr += i+1+" - " + animals[i];
+					}
+				}
+				console.log(finalstr);
+
+				window.open('mailto:sandeep33cs@gmail.com?subject=Final results of the experiment &body='+finalstr);
+
+
+				window.location='index.html';
+			}
+
+			
+  		</script>
+  		<div  style="background-color:#87ceeb;">
+  		<div style="width: 700px; float: left; margin: 20px;position: fixed;">
+
+  			<p id="test" style="font-size: 150%"><b><i>
+  				EXPERIMENT INSTRUCTIONS:<br><br>
+  				1. On the right is shown a grid of colors, try to identify the colors which were in the list previously shown to you and memorized by you.<br><br>
+  				2. Select the color sets which you think were present from amongst the many color sets shown.<br><br>
+  				3. You have to select by clicking on any one color in the color set.<br><br>
+  				4. If you wish to, you can deselect by clicking on the set once again. Avoid random guessing.<br><br>
+  				5. Since only 8 color sets were shown, you need not select more than 8 sets, if you do so, it will show an error.<br><br><br><br>
+  				After having completed the task, click on "Done" to see the results.
+  			</i></b></p>
+
+  			<p id="para" class="hide" style="font-size: 150%; "><b><i>
+  				On the right side is the list of words which were shown to you previously. The words marked with black border are the ones you recalled. What does it indicate?<br><br></i></b></p>
+  				<p id="para1" class="hide" style="font-size: 150%; "><b><i> As can be seen, you recalled more words from the top and bottom than the middle rows. This result is in consonance with the Serial Position Effect. This shows the infuence of the Serial Position Effect. <br><br></i></b></p>
+  				<p id="para2" class="hide" style="font-size: 150% "><b><i>Congratulations, you have recalled all the 8 words correctly. Your memory and cognitive abilities are good. The Serial Position Effect could not have any effect in your case as you could recall hundred percent of the items.<br>(Disclaimer: There are chances that the words were selected clicking randomly without a real effort to recall, in which case the Serial Position Effect does not apply.)</i></b></p>
+  				<p id="para3" class="hide" style="font-size: 150%"><b><i>It seems you were not able to recall any of the words correctly, please restart the experiment.</i></b></p>
+  				<p id="para4" class="hide" style="font-size: 150%"><b><i>The recall results are not in confirmation with what the Serial Position Effect predicts. The possible reasons for interference could be:<br>
+  					a) Dependency of recall on other factors such as brightness of color.<br>
+  					b) Or personal bias to certain colors only.<br>
+  				c) Random selection of colors.(if this is the case,then it is suggested that you redo the test after 10mins.)</i></b></p>
+
+  			</div>
+  			<div id="pos1">
+
+  				<div id="mydiv1" class="old" onclick="myfunction1(0)">
+  					DOG
+  				</div>
+  				<div id="mydiv2" class="old" onclick="myfunction1(1)">
+  					MOUSE
+  				</div>
+  				<div id="mydiv3" class="old" onclick="myfunction1(2)">
+  					CAT
+  				</div>
+  				<div id="mydiv4"  class="old" onclick="myfunction1(3)">
+  					TURTLE
+  				</div>
+  				<div id="mydiv5" class="old" onclick="myfunction1(4)">
+  					WOLF
+  				</div>
+  				<div id="mydiv6"  class="old" onclick="myfunction1(5)">
+  					BEAR
+  				</div>
+  			</div>
+  			<div id="pos2">
+  				<div id="mydiv7"  class="old" onclick="myfunction1(6)">
+  					LION
+  				</div>
+  				<div id="mydiv8"  class="old" onclick="myfunction1(7)">
+  					TIGER
+  				</div>
+  				<div id="mydiv9"  class="old" onclick="myfunction1(8)">
+  					RABBIT
+  				</div>
+  				<div id="mydiv10" class="old" onclick="myfunction1(9)">
+  					PANDA
+  				</div>
+  				<div id="mydiv11" class="old" onclick="myfunction1(10)">
+  					PIG
+  				</div>
+  				<div id="mydiv12" class="old" onclick="myfunction1(11)">
+  					GOAT
+  				</div>
+  			</div>
+
+  		</center>
+  		<div style="padding: 20px; margin: 20px;margin-bottom: 100px; position: fixed; bottom: -50px;">
+  			<input type="submit" id="button1" name="nxt" value="DONE" onclick="myfunction2();" style=" border-radius: 45px;width: 200px; height: 50px; font-size: 20px; margin: 25px; position: relative; right: -1050px;background-color: #90EE90"/>
+  		</div>
+  		<div style="padding: 20px; margin: 20px; margin-bottom: 100px;position: fixed; bottom: -50px;">
+  			<input type="submit" class="hide" id="button2" name="nxt" value="SEND RESULTS" onclick="sendReport()"  style="border-radius: 45px;width: 200px; height: 50px; font-size: 20px; margin: 25px; position: relative; right: -1050px;background-color: #90EE90""/>
+  		</div>
+  		</div>
+  	</body><br><br>
+  	</html>
